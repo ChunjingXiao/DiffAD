@@ -1,0 +1,7 @@
+torch>=1.12
+torchvision
+numpy~=1.23.2
+pandas~=1.5.1
+scikit-learn~=1.1.2
+tqdm~=4.64.1
+tensorboardx~=2.5.1
