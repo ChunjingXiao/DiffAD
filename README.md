@@ -64,7 +64,7 @@ If you need to modify this path, you can refer to "config/smap_time_test.json":
   "resume_state": "experiments/SMAP_TRAIN_128_2048_100/checkpoint/E100"
 },
 ```
-
+ 
 #### We also use dataset SMAP for testing demonstration.
 
 ```python
