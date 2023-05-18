@@ -1,6 +1,6 @@
 # Imputation-based Time-Series Anomaly Detection with Conditional Weight-Incremental Diffusion Models
 
-This is an anonymous repository hosting the code of DiffAD for double-blind review.
+This is an repository hosting the code of DiffAD.
 
 ## Datasets
 
