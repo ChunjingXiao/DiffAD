@@ -1,6 +1,6 @@
 # Imputation-based Time-Series Anomaly Detection with Conditional Weight-Incremental Diffusion Models
 
-This is an repository hosting the code of our paper:  Imputation-based Time-Series Anomaly Detection with Conditional Weight-Incremental Diffusion Models, KDD 2023.
+This is an repository hosting the code of our paper:  [Imputation-based Time-Series Anomaly Detection with Conditional Weight-Incremental Diffusion Models](https://github.com/ChunjingXiao/DiffAD/blob/main/KDD_23_DiffAD.pdf), KDD 2023.
 
 ## Datasets
 
