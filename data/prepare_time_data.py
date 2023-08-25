@@ -252,7 +252,7 @@ class PrepareTimeData:
         return start_indexes, end_indexes, count
 
     def insert_normal(self, data):
-        pre_labels = 'label'
+        pre_labels = 'pre_labels'
 
         nor_indexes = data[0:self.row_num][data[pre_labels] == 0].index.tolist()
         ano_indexes = data[0:self.row_num][data[pre_labels] == 1].index.tolist()
