@@ -2,7 +2,7 @@
 
 This is an repository hosting the code of our paper:  [Imputation-based Time-Series Anomaly Detection with Conditional Weight-Incremental Diffusion Models](https://github.com/ChunjingXiao/DiffAD/blob/main/KDD_23_DiffAD.pdf), KDD 2023.
 
-##Citation
+## Citation
 
 @inproceedings{xiao2023imputation,  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; title={Imputation-based Time-Series Anomaly Detection with Conditional Weight-Incremental Diffusion Models},  
