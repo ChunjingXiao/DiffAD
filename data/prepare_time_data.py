@@ -97,7 +97,10 @@ class PrepareTimeData:
         return df
 
     def read_dataset(self, data_path, data_name):
-        if data_name.upper().find('PSM') != -1:
+        if data_name.upper().find('MSL') != -1:
+            cols = [-1]
+            self.get_dataset(data_path, cols)
+        elif data_name.upper().find('PSM') != -1:
             if self.phase == 'train':
                 cols = [-1]
                 self.get_dataset(data_path, cols)
@@ -111,6 +114,9 @@ class PrepareTimeData:
                     self.test_labels.drop(columns=['timestamp_(min)'], inplace=True)
         elif data_name.upper().find('SMAP') != -1:
             cols = [0, 1, 2, 3, 4, 7, 8, 9, 10, 12, 13, 15, 16, 19, 20]
+            self.get_dataset(data_path, cols)
+        elif data_name.upper().find('SMD') != -1:
+            cols = [0, 1, 3, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 28, 33, 35, 36, 37]
             self.get_dataset(data_path, cols)
 
     def get_dataset(self, data_path, cols):

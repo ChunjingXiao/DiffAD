@@ -1,0 +1,80 @@
+{
+  "name": "MSL_TRAIN",
+  "phase": "train",
+  "gpu_ids": [
+    0,
+    1
+  ],
+  "path": {
+    "log": "logs",
+    "tb_logger": "tb_logger",
+    "results": "results",
+    "checkpoint": "checkpoint",
+    "resume_state": null
+  },
+  "datasets": {
+    "train": {
+      "name": "msl_train",
+      "mode": "HR",
+      "dataroot": "tf_dataset/msl/msl_train.csv",
+      "datatype": "time",
+      "l_resolution": 16,
+      "r_resolution": 128,
+      "batch_size": 32,
+      "num_workers": 4,
+      "use_shuffle": false,
+      "data_len": -1
+    }
+  },
+  "model": {
+    "which_model_G": "sr3",
+    "finetune_norm": false,
+    "unet": {
+      "in_channel": 2,
+      "out_channel": 1,
+      "inner_channel": 32,
+      "norm_groups": 16,
+      "channel_multiplier": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "attn_res": [],
+      "res_blocks": 1,
+      "dropout": 0
+    },
+    "beta_schedule": {
+      "train": {
+        "schedule": "linear",
+        "n_timestep": 100,
+        "linear_start": 1e-6,
+        "linear_end": 1e-2
+      }
+    },
+    "diffusion": {
+      "time_size": 128,
+      "channels": 1,
+      "conditional": true
+    }
+  },
+  "train": {
+    "n_epoch": 100,
+    "val_freq": 100,
+    "save_checkpoint_freq": 100,
+    "print_freq": 10,
+    "optimizer": {
+      "type": "adam",
+      "lr": 3e-6
+    },
+    "ema_scheduler": {
+      "step_start_ema": 5000,
+      "update_ema_every": 1,
+      "ema_decay": 0.9999
+    }
+  },
+  "wandb": {
+    "project": "distributed_time"
+  }
+}
