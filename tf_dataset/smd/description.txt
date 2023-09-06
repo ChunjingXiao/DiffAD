@@ -1,3 +1,2 @@
-Due to GitHub's file size limit of 100MB, we have split the 'smd_train.csv' file into two parts,
-namely 'smd_train_0.csv' and 'smd_train_1.csv'.
+Due to GitHub's file size limit of 100MB, we have split the 'smd_train.csv' file into two parts, namely 'smd_train_0.csv' and 'smd_train_1.csv'.
 To use them, you will need to merge 'smd_train_0.csv' and 'smd_train_1.csv' into a single file for use as a training set.
