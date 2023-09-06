@@ -1,0 +1,71 @@
+{
+  "name": "SMD_TEST",
+  "phase": "test",
+  "gpu_ids": [
+    0
+  ],
+  "path": {
+    "log": "logs",
+    "tb_logger": "tb_logger",
+    "results": "results",
+    "checkpoint": "checkpoint",
+    "resume_state": "experiments/SMD_TRAIN_128_2048_100/checkpoint/E100"
+  },
+  "datasets": {
+    "test": {
+      "name": "smd_test",
+      "mode": "HR",
+      "dataroot": "tf_dataset/smd/smd_test.csv",
+      "datatype": "time",
+      "l_resolution": 128,
+      "r_resolution": 2048,
+      "data_len": -1
+    }
+  },
+  "model": {
+    "which_model_G": "sr3",
+    "finetune_norm": false,
+    "unet": {
+      "in_channel": 2,
+      "out_channel": 1,
+      "inner_channel": 32,
+      "norm_groups": 16,
+      "channel_multiplier": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "attn_res": [],
+      "res_blocks": 1,
+      "dropout": 0
+    },
+    "beta_schedule": {
+      "train": {
+        "schedule": "linear",
+        "n_timestep": 100,
+        "linear_start": 1e-6,
+        "linear_end": 1e-2
+      },
+      "test": {
+        "schedule": "linear",
+        "start_label": 1,
+        "end_label": 1001,
+        "step_label": 1,
+        "step_t": 1000,
+        "n_timestep": 100,
+        "linear_start": 1e-6,
+        "linear_end": 1e-2
+      }
+    },
+    "diffusion": {
+      "time_size": 2048,
+      "channels": 1,
+      "conditional": true
+    }
+  },
+  "wandb": {
+    "project": "distributed_time"
+  }
+}
